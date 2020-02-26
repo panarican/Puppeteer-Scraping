@@ -21,7 +21,7 @@ const csv = fs.createWriteStream('report.csv', {
 
     // Submit form
     await Promise.all([
-        page.waitForSelector('.reports-count'),
+        page.waitForSelector('.reports-count'), // page.waitForNavigation() works if you just want to wait for page load
         page.$eval('#signinForm', form => form.submit())
     ]);
 
